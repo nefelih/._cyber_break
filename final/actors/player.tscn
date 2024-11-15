@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://cv4fqh725q8d8"]
+
+[ext_resource type="Script" path="res://actors/player.gd" id="1_dbth8"]
+[ext_resource type="Script" path="res://actors/jump.gd" id="2_my4la"]
+[ext_resource type="Script" path="res://actors/idle.gd" id="3_llwpi"]
+[ext_resource type="Script" path="res://actors/move.gd" id="4_c5sow"]
+[ext_resource type="Script" path="res://actors/climb.gd" id="5_4n338"]
+[ext_resource type="Script" path="res://actors/fall.gd" id="6_m34rx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4p02l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y5h2"]
+size = Vector2(61, 61)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_dbth8")
+initial_state = NodePath("States/Idle")
+
+[node name="MainSprite" type="Sprite2D" parent="."]
+position = Vector2(28.75, 28.75)
+scale = Vector2(58.5, 58.5)
+texture = SubResource("CanvasTexture_4p02l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(28.5, 28.5)
+shape = SubResource("RectangleShape2D_8y5h2")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Jump" type="Node" parent="States"]
+script = ExtResource("2_my4la")
+
+[node name="Idle" type="Node" parent="States"]
+script = ExtResource("3_llwpi")
+
+[node name="Move" type="Node" parent="States"]
+script = ExtResource("4_c5sow")
+
+[node name="Climb" type="Node" parent="States"]
+script = ExtResource("5_4n338")
+
+[node name="Fall" type="Node" parent="States"]
+script = ExtResource("6_m34rx")
