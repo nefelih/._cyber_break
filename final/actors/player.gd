@@ -27,7 +27,7 @@ func initialize():
 	
 func _physics_process(delta: float) -> void:
 	current_state.process_state(delta)
-	print(current_state)
+	#print(current_state)
 	
 	if (!is_on_floor()):
 		#falling

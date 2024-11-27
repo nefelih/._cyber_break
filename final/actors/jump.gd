@@ -19,9 +19,6 @@ func process_state(delta: float):
 		direction = 0
 
 	#body.move_and_slide()
-
-		
-	
 		
 	##Applying gravity to player
 	#body.velocity.y += gravity 

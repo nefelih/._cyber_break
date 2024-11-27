@@ -1,7 +1,7 @@
 extends State
 
 const GRAVITY = 1500.0
-const MOVE_SPEED = 700
+const MOVE_SPEED = 400
 
 var idle_state: State
 
@@ -22,7 +22,7 @@ func process_state(delta: float):
 			body.velocity.x = direction * MOVE_SPEED
 		else:
 		#dampen effects of moving while in air
-			body.velocity.x = direction * MOVE_SPEED/7
+			body.velocity.x = direction * MOVE_SPEED/3
 	else:
 		body.velocity.x = move_toward(body.velocity.x, 0, MOVE_SPEED)
 	

@@ -10,19 +10,20 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_4p02l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y5h2"]
-size = Vector2(61, 61)
+size = Vector2(40, 40)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_dbth8")
 initial_state = NodePath("States/Idle")
 
 [node name="MainSprite" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
 position = Vector2(28.75, 28.75)
-scale = Vector2(58.5, 58.5)
+scale = Vector2(40, 40)
 texture = SubResource("CanvasTexture_4p02l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(28.5, 28.5)
+position = Vector2(29, 29)
 shape = SubResource("RectangleShape2D_8y5h2")
 
 [node name="States" type="Node" parent="."]
