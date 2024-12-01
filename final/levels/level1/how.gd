@@ -1,5 +1,7 @@
 extends Label
 
+signal typing_finished
+
 var pc: float
 
 func _ready():
@@ -11,6 +13,7 @@ func _on_timer_timeout() -> void:
 	visible_ratio += pc
 	if visible_ratio >= 1.0:
 		$Timer.stop()
+		typing_finished.emit()
 
 
 func _on_what_typing_finished() -> void:

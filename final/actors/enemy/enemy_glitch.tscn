@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://kvbjqg8mltqm"]
+
+[ext_resource type="Script" path="res://actors/enemy/enemy_glitch.gd" id="1_8kt7n"]
+[ext_resource type="Script" path="res://actors/enemy/move.gd" id="2_3mktp"]
+[ext_resource type="PackedScene" uid="uid://dp2huexgajiqo" path="res://actors/enemy/death_zone.tscn" id="2_si2ev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8eqy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tm7cu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pypqk"]
+
+[node name="EnemyGlitch" type="CharacterBody2D" node_paths=PackedStringArray("initial_state")]
+position = Vector2(367, 120)
+collision_layer = 2
+script = ExtResource("1_8kt7n")
+initial_state = NodePath("States/Move")
+
+[node name="DeathZone" parent="." instance=ExtResource("2_si2ev")]
+position = Vector2(-8, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(8, 6)
+scale = Vector2(1.4, 1.4)
+shape = SubResource("RectangleShape2D_v8eqy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(25, 25)
+texture = SubResource("CanvasTexture_tm7cu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pypqk")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Move" type="Node" parent="States"]
+script = ExtResource("2_3mktp")

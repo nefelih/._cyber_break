@@ -1,0 +1,174 @@
+[gd_scene load_steps=18 format=3 uid="uid://cbb56lny86iwg"]
+
+[ext_resource type="Script" path="res://levels/level1/scene_1.gd" id="1_tkym5"]
+[ext_resource type="Texture2D" uid="uid://blqj8a04s3pnw" path="res://scene/blue_screen/png background.png" id="2_f2067"]
+[ext_resource type="FontFile" uid="uid://bonugxt8ggnvf" path="res://fonts/perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf" id="3_gx13x"]
+[ext_resource type="Script" path="res://levels/level1/typewriter.gd" id="4_0pjca"]
+[ext_resource type="PackedScene" uid="uid://dp2huexgajiqo" path="res://actors/enemy/death_zone.tscn" id="4_m7pdx"]
+[ext_resource type="PackedScene" uid="uid://kvbjqg8mltqm" path="res://actors/enemy/enemy_glitch.tscn" id="5_3c1ni"]
+[ext_resource type="PackedScene" uid="uid://cv4fqh725q8d8" path="res://actors/player/player.tscn" id="5_6yrxe"]
+[ext_resource type="Script" path="res://levels/level1/how.gd" id="6_fd8uw"]
+[ext_resource type="Texture2D" uid="uid://b038yb2o7i4wp" path="res://scene/terminal_screen/lower screen.png" id="7_ubm0f"]
+[ext_resource type="Script" path="res://levels/level1/label.gd" id="9_iuej2"]
+[ext_resource type="PackedScene" uid="uid://dojnbbwh5cqi6" path="res://actors/enemy/enemy_glitch_patrol.tscn" id="11_pq5bk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jenjh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dvnc"]
+size = Vector2(432, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo6qw"]
+size = Vector2(383, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx1ot"]
+size = Vector2(391, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3jho"]
+size = Vector2(1923.5, 27.5)
+
+[sub_resource type="GDScript" id="GDScript_i0nui"]
+script/source = "extends Camera2D
+
+@onready var player = $Player
+
+var shake_amount = 20
+var shake = true
+
+func _ready() -> void:
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta: float) -> void:
+	#print(global_position)
+	
+	if (shake_amount > 0 && shake):
+		#var rand_x = randf_range(-shake_amount, shake_amount)
+		var rand_y = randf_range(-shake_amount, shake_amount)
+		var x = 15
+		if randf() < 0.5:
+			x = -10
+				
+		position.y += rand_y
+		
+		shake_amount -= delta * 3
+		
+"
+
+[node name="Scene1" type="Node2D" node_paths=PackedStringArray("level_start_pos") groups=["levels"]]
+script = ExtResource("1_tkym5")
+level_start_pos = NodePath("Spawn")
+
+[node name="PngBackground" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_f2067")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(968, 544.75)
+scale = Vector2(1938, 1108.5)
+texture = SubResource("CanvasTexture_jenjh")
+
+[node name="PngBackground3" type="Sprite2D" parent="."]
+position = Vector2(2880, 539.5)
+texture = ExtResource("2_f2067")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2888, 544.25)
+scale = Vector2(1938, 1108.5)
+texture = SubResource("CanvasTexture_jenjh")
+
+[node name="PngBackground2" type="Sprite2D" parent="."]
+position = Vector2(2744, 1852)
+texture = ExtResource("2_f2067")
+
+[node name="LowerScreen" type="Sprite2D" parent="."]
+position = Vector2(2744, 1852)
+texture = ExtResource("7_ubm0f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="what" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(166, 1026.5)
+shape = SubResource("RectangleShape2D_6dvnc")
+
+[node name="how" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(780.5, 843)
+shape = SubResource("RectangleShape2D_fo6qw")
+
+[node name="try" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1203.5, 635)
+shape = SubResource("RectangleShape2D_yx1ot")
+
+[node name="DeathZone" parent="." instance=ExtResource("4_m7pdx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(963.25, 1105)
+shape = SubResource("RectangleShape2D_l3jho")
+
+[node name="EnemyGlitch" parent="." instance=ExtResource("5_3c1ni")]
+position = Vector2(783, 560)
+
+[node name="Player" parent="." instance=ExtResource("5_6yrxe")]
+position = Vector2(61, -111)
+
+[node name="Camera" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_bottom = -1080
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+script = SubResource("GDScript_i0nui")
+
+[node name="What" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 1010.0
+offset_right = 505.0
+offset_bottom = 1041.0
+theme_override_fonts/font = ExtResource("3_gx13x")
+theme_override_font_sizes/font_size = 30
+text = "what's going on ..."
+script = ExtResource("4_0pjca")
+
+[node name="Timer" type="Timer" parent="What"]
+wait_time = 0.1
+
+[node name="How" type="Label" parent="."]
+offset_left = 596.0
+offset_top = 825.0
+offset_right = 1045.0
+offset_bottom = 856.0
+theme_override_fonts/font = ExtResource("3_gx13x")
+theme_override_font_sizes/font_size = 30
+text = "how did you get here ?"
+script = ExtResource("6_fd8uw")
+
+[node name="Timer" type="Timer" parent="How"]
+wait_time = 0.1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1008.0
+offset_top = 617.0
+offset_right = 1396.0
+offset_bottom = 648.0
+theme_override_fonts/font = ExtResource("3_gx13x")
+theme_override_font_sizes/font_size = 30
+text = ".. .try to come up here"
+script = ExtResource("9_iuej2")
+
+[node name="Timer" type="Timer" parent="Label"]
+wait_time = 0.05
+
+[node name="Spawn" type="Node2D" parent="." groups=["respawn"]]
+position = Vector2(83, -118)
+
+[node name="EnemyGlitchPatrol" parent="." instance=ExtResource("11_pq5bk")]
+position = Vector2(1221, 243)
+
+[connection signal="typing_finished" from="What" to="How" method="_on_what_typing_finished"]
+[connection signal="timeout" from="What/Timer" to="What" method="_on_timer_timeout"]
+[connection signal="typing_finished" from="How" to="Label" method="_on_how_typing_finished"]
+[connection signal="timeout" from="How/Timer" to="How" method="_on_timer_timeout"]
+[connection signal="timeout" from="Label/Timer" to="Label" method="_on_timer_timeout"]

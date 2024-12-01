@@ -16,7 +16,7 @@ func process_state(delta: float):
 	if (Input.is_action_pressed("move_left") && (Input.is_action_pressed("move_right"))):
 		direction = 1
 		
-	print(direction)
+	#print(direction)
 	if direction:
 		if (body.is_on_floor()):
 			body.velocity.x = direction * MOVE_SPEED

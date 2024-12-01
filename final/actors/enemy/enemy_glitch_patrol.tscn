@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://dojnbbwh5cqi6"]
+
+[ext_resource type="Script" path="res://actors/enemy/enemy_glitch_patrol.gd" id="1_e40jv"]
+[ext_resource type="PackedScene" uid="uid://dp2huexgajiqo" path="res://actors/enemy/death_zone.tscn" id="2_q1vo3"]
+[ext_resource type="Script" path="res://actors/enemy/patrol.gd" id="3_0s5nn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juy0t"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cs4si"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvey6"]
+
+[node name="EnemyGlitchPatrol" type="CharacterBody2D" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_e40jv")
+initial_state = NodePath("States/Patrol")
+
+[node name="DeathZone" parent="." instance=ExtResource("2_q1vo3")]
+position = Vector2(-8, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(8, 6)
+scale = Vector2(1.4, 1.4)
+shape = SubResource("RectangleShape2D_juy0t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.356863, 1, 1, 1)
+scale = Vector2(25, 25)
+texture = SubResource("CanvasTexture_cs4si")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nvey6")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Patrol" type="Node" parent="States"]
+script = ExtResource("3_0s5nn")

@@ -26,6 +26,7 @@ func _on_glitch_animation_finished() -> void:
 		
 	if (animation_count == 3):
 		print("screen crash finished")
-		get_tree().change_scene_to_file("res://levels/scene_1.tscn")
+		LevelNumber.next_level(1)
+		get_tree().change_scene_to_file("res://levels/level_1/scene_1.tscn")
 
 	animation_count += 1

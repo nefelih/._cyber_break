@@ -28,7 +28,7 @@ func initialize():
 	
 func _physics_process(delta: float) -> void:
 	current_state.process_state(delta)
-	print(current_state)
+	#print(current_state)
 	
 	
 func on_change_state(next_state: State):
