@@ -1,6 +1,6 @@
 extends State
 
-const GRAVITY = 1500.0
+const GRAVITY = 3000.0
 const MOVE_SPEED = 300
 const FRICTION = 800.0
 

@@ -97,7 +97,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_3hh20")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("13_772qv")
 }, {
 "duration": 1.0,
@@ -141,7 +141,7 @@ animations = [{
 "duration": 2.0,
 "texture": ExtResource("19_bcbw0")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("13_772qv")
 }, {
 "duration": 2.0,
@@ -333,7 +333,9 @@ script = ExtResource("1_bbw7t")
 [node name="Glitch" type="AnimatedSprite2D" parent="."]
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_c8lsp")
-animation = &"glitch3"
+animation = &"glitch2"
 autoplay = "glitch"
+frame = 12
+frame_progress = 0.254549
 
 [connection signal="animation_finished" from="Glitch" to="." method="_on_glitch_animation_finished"]

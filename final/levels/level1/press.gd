@@ -15,6 +15,5 @@ func _on_timer_timeout() -> void:
 		$Timer.stop()
 		typing_finished.emit()
 
-
-func _on_how_typing_finished() -> void:
+func _on_you_typing_finished() -> void:
 	$Timer.start()

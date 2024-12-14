@@ -13,7 +13,7 @@ var move_state: State
 var fall_state: State
 var idle_state: State
 
-var coyote_frames = 6
+var coyote_frames = 20
 var coyote = false
 var last_floor = false
 	
