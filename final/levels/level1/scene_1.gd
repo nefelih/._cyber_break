@@ -3,6 +3,8 @@ extends Node2D
 #figure out what camera view looks the best for this situation
 #^ implementing camera jitter as it follows the player -> moving to camera.gd script
 
+@export var mouse_cursor : Resource
+
 var stop_area : Area2D
 var stop_animation : bool = false
 var disappear_area : Area2D
@@ -17,7 +19,9 @@ var camera : Camera2D
 @export var level_start_pos = Node2D
 
 func _ready() -> void:
-	$Transition.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	#Input.set_custom_mouse_cursor(mouse_cursor)
+	
 	$Stop.visible = false
 	
 	$StopMovingSprite.visible = false
@@ -65,17 +69,21 @@ func _physics_process(delta: float) -> void:
 	if (not player_reset.is_empty()):
 		await get_tree().create_timer(1).timeout
 		camera.offset.y = 0
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	if (not player_exit.is_empty() && ($Stop.visible == true)):
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		$Stop.play("default")
 		
 	if (not player_transition.is_empty() && (exit_animation == false)):
 		exit_animation = true
 		print("WE'RE DOING IT")
-		$Transition.visible = true
-		$Transition.play("exit")
+		get_tree().change_scene_to_file("res://levels/transition_2.tscn")
+		#$Transition.visible = true
+		#$Transition.play("exit")
+		#$Text/Stop.visible = false
+		#$Text/NetHack.visible = false
 
-		
 		
 func _on_stop_moving_sprite_animation_finished() -> void:
 	#print("stop moving loop starting")
@@ -90,9 +98,10 @@ func _on_stop_animation_looped() -> void:
 		$Stop.stop()
 		$Text/Stop.visible = true
 		$StaticBody2D/stop.disabled = false
-
-
-func _on_transition_animation_finished() -> void:
-	print("changing level")
-	#LevelNumber.next_level(1)
-	get_tree().change_scene_to_file("res://levels/level2/scene_2.tscn")
+		
+		
+func _input(event):
+	if (Input.is_action_just_pressed("pause")):
+		$PauseMenu.visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	

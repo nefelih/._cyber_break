@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://cqhc06f01du68"]
+[gd_scene load_steps=2 format=3 uid="uid://cqhc06f01du68"]
+
+[ext_resource type="PackedScene" uid="uid://cv4fqh725q8d8" path="res://actors/player/player.tscn" id="1_urbhu"]
 
 [node name="Scene2" type="Node2D" groups=["levels"]]
+
+[node name="Player" parent="." instance=ExtResource("1_urbhu")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Spawn" type="Node2D" parent="." groups=["respawn"]]
+position = Vector2(49, -58)

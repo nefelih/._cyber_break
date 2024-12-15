@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	#cursor go away
 
 func _input(event: InputEvent) -> void:
@@ -16,3 +16,4 @@ func _input(event: InputEvent) -> void:
 		LevelNumber.next_level(1)
 		get_tree().change_scene_to_file("res://levels/level1/scene_1.tscn")
 		#get_tree().change_scene_to_file("res://levels/transition_1.tscn")
+		#THIS IS THE CORRECT ONE ^

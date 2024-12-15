@@ -1,7 +1,8 @@
-[gd_scene load_steps=96 format=3 uid="uid://cbb56lny86iwg"]
+[gd_scene load_steps=76 format=3 uid="uid://cbb56lny86iwg"]
 
 [ext_resource type="Script" path="res://levels/level1/scene_1.gd" id="1_tkym5"]
 [ext_resource type="Texture2D" uid="uid://blqj8a04s3pnw" path="res://scene/blue_screen/png background.png" id="2_f2067"]
+[ext_resource type="Texture2D" uid="uid://cay8bif0yvg6w" path="res://scene/game_cursor.png" id="2_gan7s"]
 [ext_resource type="FontFile" uid="uid://bonugxt8ggnvf" path="res://fonts/perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf" id="3_gx13x"]
 [ext_resource type="Script" path="res://levels/level1/typewriter.gd" id="4_0pjca"]
 [ext_resource type="PackedScene" uid="uid://dp2huexgajiqo" path="res://actors/enemy/death_zone.tscn" id="4_m7pdx"]
@@ -15,27 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cwwteqggecbko" path="res://scene/terminal_screen/netHack/mimic.png" id="13_8y3o4"]
 [ext_resource type="Texture2D" uid="uid://cjt5oghwjlyuh" path="res://scene/terminal_screen/animations/start command.png" id="14_op0y2"]
 [ext_resource type="Texture2D" uid="uid://dgslaycwg6ud3" path="res://scene/terminal_screen/animations/stop.png" id="15_y5qwp"]
-[ext_resource type="Texture2D" uid="uid://dwk1vl1hxvdup" path="res://scene/exit1/exit 14.png" id="16_fgnkb"]
-[ext_resource type="Texture2D" uid="uid://dvadsd47lueki" path="res://scene/exit1/exit 15.png" id="17_1db6c"]
-[ext_resource type="Texture2D" uid="uid://fyke0t6m2sum" path="res://scene/exit1/exit 4.png" id="18_jeu4v"]
-[ext_resource type="Texture2D" uid="uid://6isi5umvq68u" path="res://scene/exit1/exit 16.png" id="19_70yr0"]
-[ext_resource type="Texture2D" uid="uid://7ypw54g6wgsq" path="res://scene/exit1/exit 5.png" id="20_xnl2m"]
-[ext_resource type="Texture2D" uid="uid://c8twmftox8ncq" path="res://scene/exit1/exit 1.png" id="21_uf56x"]
-[ext_resource type="Texture2D" uid="uid://clmhcf18kjomw" path="res://scene/exit1/exit 6.png" id="22_5v3o8"]
-[ext_resource type="Texture2D" uid="uid://d282kyjtsjq5v" path="res://scene/exit1/exit 7.png" id="23_vxrca"]
-[ext_resource type="Texture2D" uid="uid://e8k8uwrfy5nv" path="res://scene/exit1/exit 12.png" id="24_os4bk"]
-[ext_resource type="Texture2D" uid="uid://dyq1yf5ju2sgf" path="res://scene/exit1/exit 2.png" id="25_8ft2v"]
-[ext_resource type="Texture2D" uid="uid://ci4g03lbf437j" path="res://scene/exit1/exit 3.png" id="26_c5ogp"]
-[ext_resource type="Texture2D" uid="uid://ca871qpdc1cy2" path="res://scene/blue_screen/transition 1-08.png" id="27_y7rj6"]
-[ext_resource type="Texture2D" uid="uid://beqglba6idf82" path="res://scene/exit1/exit 8.png" id="28_auk0e"]
-[ext_resource type="Texture2D" uid="uid://cvh4lt48fg8cs" path="res://scene/exit1/exit 11.png" id="29_vvokd"]
-[ext_resource type="Texture2D" uid="uid://jej5v4lsvp7p" path="res://scene/exit1/exit 9.png" id="30_iork6"]
-[ext_resource type="Texture2D" uid="uid://13i2jwon6fex" path="res://scene/exit1/exit 10.png" id="31_vlp1u"]
-[ext_resource type="Texture2D" uid="uid://bfwgj6ql04ais" path="res://scene/blue_screen/transition 1-15.png" id="32_qmsy4"]
-[ext_resource type="Texture2D" uid="uid://caofn0xn8ll8d" path="res://scene/exit1/exit 13.png" id="33_1ssxx"]
-[ext_resource type="Texture2D" uid="uid://btqhfvtvoe8eb" path="res://scene/blue_screen/blank-01.png" id="34_cdsaj"]
-[ext_resource type="Texture2D" uid="uid://cwk322eplg7qa" path="res://scene/blue_screen/blank-02.png" id="34_nhn7l"]
-[ext_resource type="Texture2D" uid="uid://bugd61w8tyrnr" path="res://scene/blue_screen/blank-04.png" id="35_hvtne"]
+[ext_resource type="PackedScene" uid="uid://d4lsvvq5xan4r" path="res://levels/menus/pause_menu.tscn" id="17_onl7g"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_t2axc"]
 
@@ -116,28 +97,6 @@ radius = 447.001
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcn8v"]
 size = Vector2(82, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_juuy0"]
-atlas = ExtResource("14_op0y2")
-region = Rect2(0, 0, 158, 69)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_30v2m"]
-atlas = ExtResource("14_op0y2")
-region = Rect2(158, 0, 158, 69)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_q5jxu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_juuy0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_30v2m")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4b0sb"]
 atlas = ExtResource("11_24hm8")
@@ -407,88 +366,31 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ouhit"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_juuy0"]
+atlas = ExtResource("14_op0y2")
+region = Rect2(0, 0, 158, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30v2m"]
+atlas = ExtResource("14_op0y2")
+region = Rect2(158, 0, 158, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5jxu"]
 animations = [{
 "frames": [{
-"duration": 10.0,
-"texture": ExtResource("16_fgnkb")
-}, {
-"duration": 3.0,
-"texture": ExtResource("17_1db6c")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juuy0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_jeu4v")
-}, {
-"duration": 5.0,
-"texture": ExtResource("19_70yr0")
-}, {
-"duration": 7.0,
-"texture": ExtResource("20_xnl2m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_jeu4v")
-}, {
-"duration": 2.0,
-"texture": ExtResource("21_uf56x")
-}, {
-"duration": 8.0,
-"texture": ExtResource("22_5v3o8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_vxrca")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_os4bk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_8ft2v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_c5ogp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_y7rj6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_auk0e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_vvokd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_iork6")
-}, {
-"duration": 5.0,
-"texture": ExtResource("31_vlp1u")
-}, {
-"duration": 5.0,
-"texture": ExtResource("19_70yr0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_qmsy4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_1ssxx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_xnl2m")
-}, {
-"duration": 4.0,
-"texture": ExtResource("34_cdsaj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_nhn7l")
-}, {
-"duration": 10.0,
-"texture": ExtResource("35_hvtne")
+"texture": SubResource("AtlasTexture_30v2m")
 }],
-"loop": false,
-"name": &"exit",
-"speed": 7.0
+"loop": true,
+"name": &"default",
+"speed": 2.0
 }]
 
 [node name="Scene1" type="Node2D" node_paths=PackedStringArray("level_start_pos") groups=["levels"]]
 script = ExtResource("1_tkym5")
+mouse_cursor = ExtResource("2_gan7s")
 level_start_pos = NodePath("Spawn")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -687,15 +589,15 @@ theme_override_font_sizes/normal_font_size = 40
 text = "||............|"
 fit_content = true
 
-[node name="Github" type="RichTextLabel" parent="Text"]
+[node name="Github" type="LinkButton" parent="Text"]
 offset_left = 150.0
 offset_top = 38.0
 offset_right = 813.0
 offset_bottom = 100.0
-theme_override_fonts/normal_font = ExtResource("3_gx13x")
-theme_override_font_sizes/normal_font_size = 30
-text = "https://github.com/NetHack/NetHack.git"
-fit_content = true
+theme_override_fonts/font = ExtResource("3_gx13x")
+theme_override_font_sizes/font_size = 30
+text = "click here"
+uri = "https://www.nethack.org/common/info.html#Basic"
 
 [node name="TrapPit" type="RichTextLabel" parent="Text"]
 offset_left = 3971.0
@@ -760,15 +662,6 @@ shape = SubResource("CircleShape2D_qi0vr")
 position = Vector2(4658, 797)
 shape = SubResource("RectangleShape2D_vcn8v")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="StartCommand" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(92, 55)
-sprite_frames = SubResource("SpriteFrames_q5jxu")
-autoplay = "default"
-frame = 1
-frame_progress = 0.837286
-
 [node name="StopMovingSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(2346, 369)
 sprite_frames = SubResource("SpriteFrames_dwwki")
@@ -785,14 +678,22 @@ sprite_frames = SubResource("SpriteFrames_6sdcd")
 frame = 13
 frame_progress = 0.778273
 
-[node name="Transition" type="AnimatedSprite2D" parent="."]
-position = Vector2(4732, 548)
-sprite_frames = SubResource("SpriteFrames_ouhit")
-animation = &"exit"
-autoplay = "exit"
-
 [node name="Spawn" type="Node2D" parent="." groups=["respawn"]]
-position = Vector2(4073, -102)
+position = Vector2(79, -105)
+
+[node name="Command" type="CanvasLayer" parent="."]
+
+[node name="StartCommand" type="AnimatedSprite2D" parent="Command"]
+position = Vector2(92, 55)
+sprite_frames = SubResource("SpriteFrames_q5jxu")
+autoplay = "default"
+frame = 1
+frame_progress = 0.837286
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="PauseMenu" parent="PauseMenu" instance=ExtResource("17_onl7g")]
 
 [connection signal="typing_finished" from="What" to="How" method="_on_what_typing_finished"]
 [connection signal="timeout" from="What/Timer" to="What" method="_on_timer_timeout"]
@@ -803,4 +704,3 @@ position = Vector2(4073, -102)
 [connection signal="timeout" from="Press/Timer" to="Press" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="StopMovingSprite" to="." method="_on_stop_moving_sprite_animation_finished"]
 [connection signal="animation_looped" from="Stop" to="." method="_on_stop_animation_looped"]
-[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
