@@ -12,7 +12,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y5h2"]
 size = Vector2(40, 40)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("initial_state")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("initial_state") groups=["player"]]
 collision_mask = 7
 script = ExtResource("1_dbth8")
 initial_state = NodePath("States/Idle")

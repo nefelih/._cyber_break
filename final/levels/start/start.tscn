@@ -1,0 +1,203 @@
+[gd_scene load_steps=29 format=3 uid="uid://b7n5fjdwh7axm"]
+
+[ext_resource type="Script" path="res://levels/start/start.gd" id="1_10iiv"]
+[ext_resource type="Texture2D" uid="uid://b67u8qridtijr" path="res://levels/start/desktop1.png" id="1_85wnh"]
+[ext_resource type="Texture2D" uid="uid://bb3d7nxku5ifw" path="res://levels/start/desktop2.png" id="2_s370v"]
+[ext_resource type="Texture2D" uid="uid://bxged5pbx6apb" path="res://levels/start/desktop3.png" id="3_hnh3b"]
+[ext_resource type="Texture2D" uid="uid://c2fs118j86lv4" path="res://levels/start/desktop4.png" id="4_p8iro"]
+[ext_resource type="Texture2D" uid="uid://cbf0ue2dd0k7l" path="res://levels/start/desktop5.png" id="5_fpmg2"]
+[ext_resource type="Texture2D" uid="uid://c31mxg2htxx3u" path="res://levels/start/desktop6.png" id="6_ygeup"]
+[ext_resource type="Texture2D" uid="uid://c3nuc1vxamecm" path="res://levels/start/desktop7.png" id="7_fqeso"]
+[ext_resource type="Texture2D" uid="uid://4vrcqq0lhrj2" path="res://levels/start/desktop8.png" id="8_0waa1"]
+[ext_resource type="Texture2D" uid="uid://dp27c7ujlipcr" path="res://levels/start/desktop9.png" id="9_rkl0m"]
+[ext_resource type="Texture2D" uid="uid://cc2pqymnr6d3v" path="res://levels/start/desktop10.png" id="10_si5j8"]
+[ext_resource type="Texture2D" uid="uid://b0mry3nmi6o6f" path="res://levels/start/desktop11.png" id="11_yrx6g"]
+[ext_resource type="Texture2D" uid="uid://wetf1v87cg3" path="res://levels/start/desktop12.png" id="12_gel6e"]
+[ext_resource type="Texture2D" uid="uid://dkxphqind2s0r" path="res://levels/start/desktop13.png" id="13_nhtnu"]
+[ext_resource type="Texture2D" uid="uid://cf8y4t1h2hjag" path="res://levels/start/desktop14.png" id="14_6udl2"]
+[ext_resource type="Texture2D" uid="uid://cn1blgfuhexvg" path="res://levels/start/desktop15.png" id="15_nxddr"]
+[ext_resource type="Texture2D" uid="uid://dvhxuu7e86u4a" path="res://levels/start/desktop16.png" id="16_4d24y"]
+[ext_resource type="FontFile" uid="uid://bonugxt8ggnvf" path="res://fonts/perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf" id="17_6cubv"]
+[ext_resource type="Texture2D" uid="uid://rwwgul0s0f0i" path="res://scene/blue_screen/transition 1-10.png" id="18_vp0lg"]
+[ext_resource type="Texture2D" uid="uid://btqhfvtvoe8eb" path="res://scene/blue_screen/blank-01.png" id="19_ai1lm"]
+[ext_resource type="Texture2D" uid="uid://blqj8a04s3pnw" path="res://scene/blue_screen/png background.png" id="19_v35rk"]
+[ext_resource type="Texture2D" uid="uid://bugd61w8tyrnr" path="res://scene/blue_screen/blank-04.png" id="20_rugqm"]
+[ext_resource type="Texture2D" uid="uid://b6ovmlingu6ew" path="res://scene/blue_screen/transition 1-18.png" id="20_wmd2r"]
+[ext_resource type="Texture2D" uid="uid://ca871qpdc1cy2" path="res://scene/blue_screen/transition 1-08.png" id="21_x8v6l"]
+[ext_resource type="Texture2D" uid="uid://b038yb2o7i4wp" path="res://scene/terminal_screen/lower screen.png" id="22_ofvee"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h8w4g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_85wnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s370v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hnh3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p8iro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fpmg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ygeup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fqeso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0waa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rkl0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_si5j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yrx6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gel6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nhtnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6udl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nxddr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4d24y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m26fw"]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": ExtResource("16_4d24y")
+}, {
+"duration": 3.0,
+"texture": ExtResource("1_85wnh")
+}, {
+"duration": 3.0,
+"texture": ExtResource("18_vp0lg")
+}, {
+"duration": 20.0,
+"texture": ExtResource("3_hnh3b")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_p8iro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_v35rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fpmg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wmd2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fqeso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rkl0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gel6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rugqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nhtnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ofvee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6udl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nhtnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ai1lm")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_hnh3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_si5j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nxddr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rugqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_x8v6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6udl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s370v")
+}],
+"loop": false,
+"name": &"transition",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bdbl"]
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_10iiv")
+
+[node name="Desktop" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 539)
+sprite_frames = SubResource("SpriteFrames_h8w4g")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Desktop2" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0.137255, 1, 1)
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_m26fw")
+animation = &"transition"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 850.0
+offset_top = 659.0
+offset_right = 1086.0
+offset_bottom = 690.0
+theme_override_fonts/font = ExtResource("17_6cubv")
+theme_override_font_sizes/font_size = 30
+text = "../cyber_break"
+
+[node name="Start" type="Button" parent="."]
+offset_left = 148.0
+offset_top = 904.0
+offset_right = 353.0
+offset_bottom = 967.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("17_6cubv")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1bdbl")
+text = "start"
+flat = true
+
+[connection signal="animation_finished" from="Desktop2" to="." method="_on_desktop_2_animation_finished"]

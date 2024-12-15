@@ -4,6 +4,7 @@ extends Node2D
 #^ implementing camera jitter as it follows the player -> moving to camera.gd script
 
 @export var mouse_cursor : Resource
+@export var pause_menu: PackedScene
 
 var stop_area : Area2D
 var stop_animation : bool = false
@@ -17,6 +18,8 @@ var exit_animation : bool = false
 var stop_count = 0
 var camera : Camera2D
 @export var level_start_pos = Node2D
+
+@onready var player : Player = $Player
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -41,6 +44,9 @@ func _ready() -> void:
 	pit_area = $Pit
 	final_glitch = $Glitch
 	exit = $Exit
+	
+	$Pause/PauseMenu.visible = false
+	Menu.paused.connect(transition)
 
 func _physics_process(delta: float) -> void:
 	var player = stop_area.get_overlapping_bodies()
@@ -51,6 +57,7 @@ func _physics_process(delta: float) -> void:
 	
 	#print(player)
 	if (not player.is_empty() && stop_animation == false):
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		stop_animation = true
 		$StopMovingSprite.visible = true
 		$StopMovingSprite.play("stop")
@@ -102,6 +109,15 @@ func _on_stop_animation_looped() -> void:
 		
 func _input(event):
 	if (Input.is_action_just_pressed("pause")):
-		$PauseMenu.visible = true
+		Menu.update_action(0)
+		$Pause/PauseMenu.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+		
+
+func transition(action):
+	if (action == 1):
+		get_tree().change_scene_to_file("res://levels/start/start.tscn")
+	if (action == 2):
+		#print("yo")
+		$Pause/PauseMenu.visible = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

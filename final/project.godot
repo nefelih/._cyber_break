@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelNumber="*res://shared_scripts/level_number.gd"
+Menu="*res://shared_scripts/menus/menu.gd"
 
 [display]
 
@@ -33,6 +34,7 @@ game_over=""
 glitch=""
 respawn=""
 levels=""
+player=""
 
 [gui]
 

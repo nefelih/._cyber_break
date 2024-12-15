@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4lsvvq5xan4r"]
+
+[ext_resource type="Script" path="res://shared_scripts/menus/pause_menu.gd" id="1_n002i"]
+[ext_resource type="Texture2D" uid="uid://dtdqa3wmuos3e" path="res://shared_scripts/menus/pause_menu.png" id="2_ar7ac"]
+[ext_resource type="Texture2D" uid="uid://ed3qghxhlj6u" path="res://shared_scripts/menus/exit_button.png" id="3_bi34n"]
+[ext_resource type="Texture2D" uid="uid://b4njsmgmdn2l8" path="res://shared_scripts/menus/controls.png" id="3_htnmg"]
+[ext_resource type="Texture2D" uid="uid://bjxcjvb5cpofx" path="res://shared_scripts/menus/resume_button.png" id="4_kdq3o"]
+[ext_resource type="Texture2D" uid="uid://d1btoxksiibt4" path="res://shared_scripts/menus/control_button.png" id="5_q3x6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c0odp"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_n002i")
+
+[node name="PauseMenu" type="Sprite2D" parent="."]
+position = Vector2(992, 563)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_ar7ac")
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 1015.0
+offset_top = 303.0
+offset_right = 1323.0
+offset_bottom = 611.0
+scale = Vector2(0.8, 0.8)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c0odp")
+icon = ExtResource("3_bi34n")
+flat = true
+
+[node name="ExitButton2" type="Button" parent="."]
+offset_left = 783.0
+offset_top = 303.0
+offset_right = 1091.0
+offset_bottom = 611.0
+scale = Vector2(0.8, 0.8)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c0odp")
+icon = ExtResource("3_bi34n")
+flat = true
+
+[node name="ExitButton3" type="Button" parent="."]
+offset_left = 575.0
+offset_top = 519.0
+offset_right = 883.0
+offset_bottom = 827.0
+scale = Vector2(0.8, 0.8)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c0odp")
+icon = ExtResource("3_bi34n")
+flat = true
+
+[node name="ExitButton4" type="Button" parent="."]
+offset_left = 575.0
+offset_top = 303.0
+offset_right = 883.0
+offset_bottom = 611.0
+scale = Vector2(0.8, 0.8)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c0odp")
+icon = ExtResource("3_bi34n")
+flat = true
+
+[node name="ResumeButton" type="Button" parent="."]
+offset_left = 1017.0
+offset_top = 520.0
+offset_right = 1325.0
+offset_bottom = 828.0
+scale = Vector2(0.8, 0.8)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c0odp")
+icon = ExtResource("4_kdq3o")
+flat = true
+
+[node name="ControlsButton" type="Button" parent="."]
+offset_left = 785.0
+offset_top = 531.0
+offset_right = 1093.0
+offset_bottom = 839.0
+scale = Vector2(0.8, 0.8)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c0odp")
+icon = ExtResource("5_q3x6r")
+flat = true
+
+[node name="Controls" type="Sprite2D" parent="."]
+position = Vector2(897, 758)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_htnmg")

@@ -36,6 +36,7 @@ func initialize():
 	idle_state = $States/Idle
 	$CoyoteTimer.wait_time = coyote_frames / 60.0
 	LevelNumber.level_change.connect(respawn)
+	Menu.paused.connect(handle_pause)
 	
 	#current_state = idle_state
 	
@@ -91,5 +92,19 @@ func respawn(level_num : int) -> void:
 	global_position = levels[level_num - 1].level_start_pos.global_position
 	visible = true
 	can_control = true
+	
+	
+func handle_pause(action):
+	can_control = false
+	
+	if (action == 1):
+		pass
+#		navigate the scene tree to go to title card
+	if (action == 2):
+		can_control = true
+		
+	if (action == 3):
+		pass
+		
 	
 	

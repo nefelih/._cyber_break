@@ -1,12 +1,76 @@
-[gd_scene load_steps=7 format=3 uid="uid://dojnbbwh5cqi6"]
+[gd_scene load_steps=16 format=3 uid="uid://dojnbbwh5cqi6"]
 
 [ext_resource type="Script" path="res://actors/enemy/enemy_glitch_patrol.gd" id="1_e40jv"]
 [ext_resource type="PackedScene" uid="uid://dp2huexgajiqo" path="res://actors/enemy/death_zone.tscn" id="2_q1vo3"]
 [ext_resource type="Script" path="res://actors/enemy/patrol.gd" id="3_0s5nn"]
+[ext_resource type="Texture2D" uid="uid://bkxpeudlibm1l" path="res://actors/enemy/small glitch.png" id="3_nqgl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juy0t"]
+size = Vector2(67.1429, 64.2857)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_cs4si"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex50u"]
+atlas = ExtResource("3_nqgl0")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4f0n"]
+atlas = ExtResource("3_nqgl0")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ewj2"]
+atlas = ExtResource("3_nqgl0")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mobyy"]
+atlas = ExtResource("3_nqgl0")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5fvn"]
+atlas = ExtResource("3_nqgl0")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4rhw"]
+atlas = ExtResource("3_nqgl0")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2srhi"]
+atlas = ExtResource("3_nqgl0")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71wqw"]
+atlas = ExtResource("3_nqgl0")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v42hg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex50u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4f0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ewj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mobyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5fvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4rhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2srhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71wqw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvey6"]
 
@@ -18,14 +82,14 @@ initial_state = NodePath("States/Patrol")
 position = Vector2(-8, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(8, 6)
+position = Vector2(10, 5)
 scale = Vector2(1.4, 1.4)
 shape = SubResource("RectangleShape2D_juy0t")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.356863, 1, 1, 1)
-scale = Vector2(25, 25)
-texture = SubResource("CanvasTexture_cs4si")
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_v42hg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nvey6")

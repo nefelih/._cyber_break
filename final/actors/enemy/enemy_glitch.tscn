@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bkxpeudlibm1l" path="res://actors/enemy/small glitch.png" id="3_p0xdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8eqy"]
+size = Vector2(45.7143, 46.4286)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0l0m"]
 atlas = ExtResource("3_p0xdv")
@@ -83,7 +84,7 @@ initial_state = NodePath("States/Move")
 position = Vector2(-8, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(8, 6)
+position = Vector2(10, 4.5)
 scale = Vector2(1.4, 1.4)
 shape = SubResource("RectangleShape2D_v8eqy")
 
