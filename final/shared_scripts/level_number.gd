@@ -6,7 +6,7 @@ var current_level : int = 0
 
 func next_level(num : int) -> void:
 	print("CURRENT LEVEL / LVL NUM: ", current_level)
-	current_level += num
+	current_level = num
 	level_change.emit(current_level)
 	print("CURRENT LEVEL / LVL NUM: ", current_level)
 	

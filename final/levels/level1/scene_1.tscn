@@ -673,7 +673,7 @@ position = Vector2(4145, 1045.5)
 texture = ExtResource("13_8y3o4")
 
 [node name="Stop" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.52372, 1, 0.996343, 1)
+modulate = Color(0.335796, 0.476097, 0.999467, 1)
 position = Vector2(4718, 756)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_6sdcd")

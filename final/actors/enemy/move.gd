@@ -1,6 +1,7 @@
 extends State
 
-const MOVE_SPEED : int = 40
+const MOVE_SPEED : int = 100
+
 
 var up : bool = true
 var movement : int = 0

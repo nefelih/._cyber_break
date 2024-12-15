@@ -85,6 +85,8 @@ func _physics_process(delta: float) -> void:
 	if (not player_transition.is_empty() && (exit_animation == false)):
 		exit_animation = true
 		print("WE'RE DOING IT")
+#		changing level
+		LevelNumber.next_level(0)
 		get_tree().change_scene_to_file("res://levels/transition_2.tscn")
 		#$Transition.visible = true
 		#$Transition.play("exit")

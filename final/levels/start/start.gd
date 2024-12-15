@@ -6,6 +6,7 @@ var switch = false
 
 func _ready() -> void:
 	$Desktop2.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

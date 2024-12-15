@@ -88,8 +88,9 @@ func handle_death() -> void:
 func respawn(level_num : int) -> void:
 	print("LEVEL NUMBER: ", level_num)
 	var levels = get_tree().get_nodes_in_group("levels")
+	print(levels)
 	velocity = Vector2(0,0)
-	global_position = levels[level_num - 1].level_start_pos.global_position
+	global_position = levels[0].level_start_pos.global_position
 	visible = true
 	can_control = true
 	

@@ -13,7 +13,6 @@ func _input(event: InputEvent) -> void:
 	#can't exit at this point, no esc to options pop up
 	#ignoring the transition rn for debugging purposes
 	#while ignoring, have this code to update level ... when it goes back to normal REMOVE IT
-		LevelNumber.next_level(1)
-		get_tree().change_scene_to_file("res://levels/level1/scene_1.tscn")
-		#get_tree().change_scene_to_file("res://levels/transition_1.tscn")
+		#get_tree().change_scene_to_file("res://levels/level1/scene_1.tscn")
+		get_tree().change_scene_to_file("res://levels/transition_1.tscn")
 		#THIS IS THE CORRECT ONE ^
