@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LevelNumber="*res://shared_scripts/level_number.gd"
 Menu="*res://shared_scripts/menus/menu.gd"
+GlobalAudioManager="*res://shared_scripts/global_audio_manager.gd"
 
 [display]
 

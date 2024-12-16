@@ -1,9 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://b7n5fjdwh7axm"]
+[gd_scene load_steps=31 format=3 uid="uid://b7n5fjdwh7axm"]
 
 [ext_resource type="Script" path="res://levels/start/start.gd" id="1_10iiv"]
 [ext_resource type="Texture2D" uid="uid://b67u8qridtijr" path="res://levels/start/desktop1.png" id="1_85wnh"]
+[ext_resource type="AudioStream" uid="uid://b17qaswxlxol8" path="res://music/572773__zeraora__glitch019-computer-startup.wav" id="2_3vt3u"]
 [ext_resource type="Texture2D" uid="uid://bb3d7nxku5ifw" path="res://levels/start/desktop2.png" id="2_s370v"]
 [ext_resource type="Texture2D" uid="uid://bxged5pbx6apb" path="res://levels/start/desktop3.png" id="3_hnh3b"]
+[ext_resource type="AudioStream" uid="uid://pvvs8n2vnlpa" path="res://music/UI_button_extraglitch_stereo/glitch10.wav" id="3_i46to"]
 [ext_resource type="Texture2D" uid="uid://c2fs118j86lv4" path="res://levels/start/desktop4.png" id="4_p8iro"]
 [ext_resource type="Texture2D" uid="uid://cbf0ue2dd0k7l" path="res://levels/start/desktop5.png" id="5_fpmg2"]
 [ext_resource type="Texture2D" uid="uid://c31mxg2htxx3u" path="res://levels/start/desktop6.png" id="6_ygeup"]
@@ -166,6 +168,8 @@ animations = [{
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_10iiv")
+bg_music = ExtResource("2_3vt3u")
+bg_music_2 = ExtResource("3_i46to")
 
 [node name="Desktop" type="AnimatedSprite2D" parent="."]
 position = Vector2(960, 539)

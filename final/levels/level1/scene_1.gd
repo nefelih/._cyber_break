@@ -5,6 +5,7 @@ extends Node2D
 
 @export var mouse_cursor : Resource
 @export var pause_menu: PackedScene
+@export var bg_music : Resource
 
 var stop_area : Area2D
 var stop_animation : bool = false
@@ -48,6 +49,7 @@ func _ready() -> void:
 	$Pause/PauseMenu.visible = false
 	Menu.paused.connect(transition)
 
+	GlobalAudioManager.play_track(bg_music, 0.5)
 func _physics_process(delta: float) -> void:
 	var player = stop_area.get_overlapping_bodies()
 	var player_disappear =  disappear_area.get_overlapping_bodies()
