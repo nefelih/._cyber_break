@@ -1,4 +1,4 @@
-# << cyber_break
+# ../cyber_break
 
 Game Development Final Project Proposal
 
